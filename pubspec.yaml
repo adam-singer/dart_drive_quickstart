@@ -1,0 +1,4 @@
+name:  dart_drive_quickstart
+description:  A sample drive application
+dependencies:
+  js: any
