@@ -98,7 +98,7 @@ void main() {
       authButton.style.display = 'none';
       filePicker.style.display = 'none';
 
-      if (!dartAuthResult.containsKey('error')) {
+      if (dartAuthResult != null && !dartAuthResult.containsKey('error')) {
         // Access token has been successfully retrieved, requests can be sent to the API.
         filePicker.style.display = 'block';
         filePicker.on['change'].add(uploadFile);
@@ -110,7 +110,7 @@ void main() {
                 js.map({
                     'client_id': CLIENT_ID,
                     'scope': SCOPE,
-                    'immediate': true
+                    'immediate': false
                   }),
                   js.context.handleAuthResult);
           });
@@ -127,7 +127,7 @@ void main() {
           js.map({
               'client_id': CLIENT_ID,
               'scope': SCOPE,
-              'immediate': true
+              'immediate': false
             }),
             js.context.handleAuthResult);
     });
